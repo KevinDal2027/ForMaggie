@@ -159,3 +159,22 @@ span::after {
         }
     }
 }
+a {
+    text-decoration: none;
+    color: red;
+    animation: heartPulse 1s infinite;
+}
+
+a:hover {
+    background-color: aliceblue;
+    font-size: larger;
+}
+
+@keyframes heartPulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.3);
+    }
+}
