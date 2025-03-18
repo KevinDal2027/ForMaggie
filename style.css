@@ -1,0 +1,161 @@
+@import url('https://fonts.cdnfonts.com/css/lovely');
+.container {
+    display: inline-block;
+}
+.text {
+    font-size: 2em;
+    letter-spacing: 8px;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+}
+@keyframes typing {
+    0% {
+        width: 0;
+        visibility: visible;
+        opacity: 1;
+    }
+    100%{
+        width: 100%;
+    }
+}
+
+.text0 {
+    animation: typing 4s steps(18) forwards;
+    visibility: visible;
+    opacity: 1;
+}
+
+.text1 {
+    animation: typing 4s steps(18) forwards;
+    animation-delay: 4s;
+    visibility: visible;
+    opacity: 1;
+}
+
+.text2 {
+    animation: typing 4s steps(18) forwards;
+    animation-delay: 8s;
+    visibility: visible;
+    opacity: 1;
+}
+.text3 {
+    animation: typing 4s steps(18) forwards;
+    animation-delay: 12s;
+    visibility: visible;
+    opacity: 1;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lovely', sans-serif;                          
+}
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+.wrapper {
+    display: inline-flex;
+    gap: 2em;
+    letter-spacing: 0.3em;
+}
+.static-txt {
+    color: aqua;
+    font-size: 60px;
+    font-weight: 400;
+}
+
+.dynamic-txt {
+    margin-left: 15px;
+    height: 120px;
+    line-height: 120px;
+    overflow: hidden;
+}
+
+li {
+    color: pink;
+    list-style: none;
+    font-size: 60px;
+    font-weight: 500;
+    position: relative;
+    top: 0;
+    animation: sliding 12s steps(6) infinite;
+}
+@keyframes sliding {
+    100%{
+        top: -720px;
+    }
+}
+span {
+    position: relative;
+}
+span::after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: white;
+    border-left: 2px solid blue;
+    left: 0;
+    animation: dynamicWords 2s steps(8) infinite;
+}
+@keyframes dynamicWords {
+    100%{
+        left: 100%;
+        margin: 0 -35px 0 35px;
+    }
+}
+
+@media (max-width: 768px) {
+    .text {
+        font-size: 1.5em;
+        letter-spacing: 5px;
+    }
+    .static-txt, .dynamic-txt li {
+        font-size: 40px;
+    }
+    .dynamic-txt {
+        height: 80px;
+        line-height: 80px;
+    }
+    li {
+        animation: sliding 10s steps(6) infinite;
+    }
+    @keyframes sliding {
+        100%{
+            top: -480px;
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .text {
+        font-size: 1.2em;
+        letter-spacing: 3px;
+    }
+    .static-txt, .dynamic-txt li {
+        font-size: 30px;
+    }
+    .dynamic-txt {
+        height: 60px;
+        line-height: 60px;
+    }
+    .wrapper {
+        gap: 0.5em;
+    }
+    li {
+        animation: sliding 8s steps(6) infinite;
+    }
+    @keyframes sliding {
+        100%{
+            top: -360px;
+        }
+    }
+}
